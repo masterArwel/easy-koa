@@ -21,19 +21,23 @@
             background:red;
             color: #fff;
         }
+        input{
+            margin: 20px auto;
+        }
     </style>
 </head>
 <body>
     <button id="btn">点我弹出</button>
     <div class="alert">
         <input type="text" id="name" autofocus="autofocus">
+        <div id="test"></div>
     </div>
+    <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
     <script>
         document.getElementById('btn').onclick = function(){
             document.getElementsByClassName('alert')[0].style.display = 'block';
-            setTimeout(function(){
-                document.getElementById('name').focus();
-            },10)
+            $("#test").fadeOut(10);
+            $('#name').focus();
         };
 
     </script>
