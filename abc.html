@@ -34,12 +34,18 @@
     </div>
     <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
     <script>
-        document.getElementById('btn').onclick = function(){
+        
+        function open_soft_keyboard(options){
+        setTimeout(function(){
+            var wv_current = plus.webview.currentWebview().nativeInstanceObject();
+            wv_current.plusCallMethod({"setKeyboardDisplayRequiresUserAction":false});
+            document.querySelector(options['input']).focus();
+        }, 330);
+    }
+    document.getElementById('btn').onclick = function(){
             document.getElementsByClassName('alert')[0].style.display = 'block';
-            $("#test").animate({'display':'none'});
-            $('#name').focus();
+            open_soft_keyboard(options)
         };
-
     </script>
 </body>
 </html>
