@@ -36,7 +36,7 @@
     <script>
         document.getElementById('btn').onclick = function(){
             document.getElementsByClassName('alert')[0].style.display = 'block';
-            $("#test").fadeOut(10);
+            $("#test").animate({'display':'none'});
             $('#name').focus();
         };
 
