@@ -31,7 +31,9 @@
     <script>
         document.getElementById('btn').onclick = function(){
             document.getElementsByClassName('alert')[0].style.display = 'block';
-            
+            setTimeout(function(){
+                document.getElementById('name').focus();
+            },10)
         };
 
     </script>
